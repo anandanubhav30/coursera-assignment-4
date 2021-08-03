@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // *** start ***
 // On first load, show home view
-showLoading("#main-content");
+//showLoading("#main-content");
 $ajaxUtils.sendGetRequest(allCategoriesUrl,buildAndShowHomeHTML, true); 
   // ***** <---- TODO: STEP 1: Substitute [...] ******
   // Explicitly setting the flag to get JSON from server processed into an object literal
@@ -89,7 +89,6 @@ $ajaxUtils.sendGetRequest(allCategoriesUrl,buildAndShowHomeHTML, true);
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
-
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
@@ -110,6 +109,7 @@ function buildAndShowHomeHTML (categories) {
       // syntax because the substitution of {{randomCategoryShortName}} becomes an argument
       // being passed into the $dc.loadMenuItems function. Think about what that argument needs
       // to look like. For example, a valid call would look something like this:
+
       $dc.loadMenuItems(chosenCategoryShortName["short_name"]);
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
